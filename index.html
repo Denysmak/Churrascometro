@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+    <title>NewTitle</title>
+<script>
+    // carne
+    var valueAdultoCarne;
+    var valueCriançaCarne;
+    // =====
+    // cerveja
+    var valueAdultoCerveja;
+    // =======
+    // 
+    var valueAdultoBebida;
+    var valueCriançaBebida;
+
+    function Biggerdiv(){
+
+let h4 = document.getElementById("h4")
+let main = document.getElementsByTagName("main")[0]
+main.style.height = "360px"
+h4.style.display = "inline"
+// input's
+let adulto = document.getElementById("adulto")
+let criança = document.getElementById("criança")
+let duraçao = document.getElementById("duraçao")
+
+// carne,cerveja e bebidas
+let carne = document.getElementById("carne");
+let cerveja = document.getElementById("cerveja");
+let bebidas = document.getElementById("bebidas")
+// =============================================
+
+
+if(duraçao.value > 6){
+    // carne
+     valueCriançaCarne = criança.value * 0.325
+     valueAdultoCarne = adulto.value * 0.65
+    //  ====
+    // cerveja
+     valueAdultoCerveja = adulto.value * 5.7
+    //  ======
+    // bebida
+     valueAdultoBebida = adulto.value * 0.75
+     valueCriançaBebida = criança.value * 0.375 
+    //  =====
+}
+else{
+    // carne
+     valueCriançaCarne = criança.value * 0.2
+     valueAdultoCarne = adulto.value * 0.4
+    //  ====
+    // cerveja
+     valueAdultoCerveja = adulto.value * 3.4
+    // ======
+    // bebida
+     valueAdultoBebida = adulto.value * 0.5
+     valueCriançaBebida = criança.value * 0.25
+    //  =====
+} 
+
+
+carne.innerHTML = Number(valueAdultoCarne + valueCriançaCarne).toFixed
+(1)
+cerveja.innerHTML = Math.ceil(valueAdultoCerveja);
+bebidas.innerHTML = Math.ceil(valueAdultoBebida + valueCriançaBebida);
+
+}
+
+
+</script>
+</head>
+<body>
+<main>
+<div class="container">
+<h1>Churrascômetro</h1>
+<input id="adulto" class="input" placeholder="Adultos" type="number">
+<input id="criança" class="input" placeholder="Crianças" type="number">
+<input id="duraçao"  class="input" placeholder="Duração (h)"  type="number">
+
+<!-- botao -->
+<input onclick="Biggerdiv()" type="submit" value="Calcular" id="botao">
+
+<!-- footer -->
+<div id="h4">
+<h4><span id="carne">0</span> kg de Carne</h4>
+<h4><span id="cerveja">0</span> Latas de Cerveja</h4>
+<h4><span id="bebidas">0</span> Pet's 2L de Bebidas</h4>
+</div>
+</div>
+
+</main>
+
+
+</body>
+
+</html>
