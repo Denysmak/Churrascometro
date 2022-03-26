@@ -9,24 +9,27 @@
     <title>NewTitle</title>
 <script>
     // carne
-    var valueAdultoCarne;
+    var valueHomemCarne;
     var valueCriançaCarne;
+    var valueMulherCarne;
     // =====
     // cerveja
-    var valueAdultoCerveja;
+    var valueHomemCerveja;
+    var valueMulherCerveja
     // =======
     // 
-    var valueAdultoBebida;
+    var valueHomemBebida;
     var valueCriançaBebida;
 
     function Biggerdiv(){
 
 let h4 = document.getElementById("h4")
 let main = document.getElementsByTagName("main")[0]
-main.style.height = "360px"
+main.style.height = "600px"
 h4.style.display = "inline"
 // input's
-let adulto = document.getElementById("adulto")
+let homem = document.getElementById("homem")
+let mulher = document.getElementById("mulher")
 let criança = document.getElementById("criança")
 let duraçao = document.getElementById("duraçao")
 
@@ -40,35 +43,41 @@ let bebidas = document.getElementById("bebidas")
 if(duraçao.value > 6){
     // carne
      valueCriançaCarne = criança.value * 0.325
-     valueAdultoCarne = adulto.value * 0.65
+     valueHomemCarne = homem.value * 0.70
+     valueMulherCarne = mulher.value * 0.5
     //  ====
     // cerveja
-     valueAdultoCerveja = adulto.value * 5.7
-    //  ======
+     valueHomemCerveja = homem.value * 6.0
+     valueMulherCerveja = mulher.value * 5.0
+     //  ======
     // bebida
-     valueAdultoBebida = adulto.value * 0.75
+     valueHomemBebida = adulto.value * 0.8
+     valueMulherBebida = mulher.value * 0.6
      valueCriançaBebida = criança.value * 0.375 
     //  =====
 }
 else{
     // carne
      valueCriançaCarne = criança.value * 0.2
-     valueAdultoCarne = adulto.value * 0.4
+     valueHomemCarne = homem.value * 0.4
+     valueMulherCarne = mulher.value * 0.3
     //  ====
     // cerveja
-     valueAdultoCerveja = adulto.value * 3.4
+     valueHomemCerveja = homem.value * 4.0
+     valueMulherCerveja = mulher.value * 3.0
     // ======
     // bebida
-     valueAdultoBebida = adulto.value * 0.5
+     valueHomemBebida = homem.value * 0.7
+     valueMulherBebida = mulher.value * 0.6
      valueCriançaBebida = criança.value * 0.25
     //  =====
 } 
 
 
-carne.innerHTML = Number(valueAdultoCarne + valueCriançaCarne).toFixed
+carne.innerHTML = Number(valueHomemCarne + valueCriançaCarne + valueMulherCarne).toFixed
 (1)
-cerveja.innerHTML = Math.ceil(valueAdultoCerveja);
-bebidas.innerHTML = Math.ceil(valueAdultoBebida + valueCriançaBebida);
+cerveja.innerHTML = Math.ceil(valueHomemCerveja + valueMulherCerveja);
+bebidas.innerHTML = Math.ceil(valueHomemBebida + valueCriançaBebida + valueMulherBebida);
 
 }
 
@@ -79,7 +88,8 @@ bebidas.innerHTML = Math.ceil(valueAdultoBebida + valueCriançaBebida);
 <main>
 <div class="container">
 <h1>Churrascômetro</h1>
-<input id="adulto" class="input" placeholder="Adultos" type="number">
+<input id="homem" class="input" placeholder="Homens" type="number">
+<input id="mulher" class="input" placeholder="Mulheres" type="number">
 <input id="criança" class="input" placeholder="Crianças" type="number">
 <input id="duraçao"  class="input" placeholder="Duração (h)"  type="number">
 
