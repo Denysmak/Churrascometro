@@ -7,6 +7,30 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
     <title>NewTitle</title>
+
+</head>
+<body>
+<main>
+<div class="container">
+<h1>Churrascômetro</h1>
+<input id="homem" class="input" placeholder="Homens" type="number">
+<input id="mulher" class="input" placeholder="Mulheres" type="number">
+<input id="criança" class="input" placeholder="Crianças" type="number">
+<input id="duraçao"  class="input" placeholder="Duração (h)"  type="number">
+
+<!-- botao -->
+<input onclick="Biggerdiv()" type="submit" value="Calcular" id="botao">
+
+<!-- footer -->
+<div id="h4">
+<h4><span id="carne">0</span> kg de Carne</h4>
+<h4><span id="cerveja">0</span> Latas de Cerveja</h4>
+<h4><span id="bebidas">0</span> Pet's 2L de Bebidas</h4>
+</div>
+</div>
+
+</main>
+
 <script>
     // carne
     var valueHomemCarne;
@@ -83,30 +107,6 @@ bebidas.innerHTML = Math.ceil(valueHomemBebida + valueCriançaBebida + valueMulh
 
 
 </script>
-</head>
-<body>
-<main>
-<div class="container">
-<h1>Churrascômetro</h1>
-<input id="homem" class="input" placeholder="Homens" type="number">
-<input id="mulher" class="input" placeholder="Mulheres" type="number">
-<input id="criança" class="input" placeholder="Crianças" type="number">
-<input id="duraçao"  class="input" placeholder="Duração (h)"  type="number">
-
-<!-- botao -->
-<input onclick="Biggerdiv()" type="submit" value="Calcular" id="botao">
-
-<!-- footer -->
-<div id="h4">
-<h4><span id="carne">0</span> kg de Carne</h4>
-<h4><span id="cerveja">0</span> Latas de Cerveja</h4>
-<h4><span id="bebidas">0</span> Pet's 2L de Bebidas</h4>
-</div>
-</div>
-
-</main>
-
-
 </body>
 
 </html>
